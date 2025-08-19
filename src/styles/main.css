@@ -1,0 +1,480 @@
+/* RESET et base */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #FBFCF8;
+  font-family: 'Jura', Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+#root {
+  width: 600px;
+  min-height: 100vh;
+  background: #F5EDE9;
+  box-shadow: 0 2px 16px 0 #e5e5e5;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* TITRES */
+h1, .title {
+  font-family: 'ADLaM Display', cursive;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin-bottom: 1.5rem;
+  color: #355C7D;
+}
+
+/* FOOTER */
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 600px;
+  height: 56px;
+  background: #070707;
+  box-shadow: 0 -4px 12px 0 #e5e5e5;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.picto {
+  filter: grayscale(100%) brightness(1) sepia(0);
+  transition: filter 0.2s;
+  width: 34px;
+  height: 34px;
+  margin: 0 16px;
+}
+
+.picto.active {
+  filter:
+    brightness(0.65)
+    sepia(1)
+    hue-rotate(-25deg)
+    saturate(7)
+    contrast(2);
+}
+
+.footer-badge {
+  position: absolute;
+  top: 0;
+  right: 8px;
+  background: #F37A27;
+  color: #fff;
+  border-radius: 50%;
+  padding: 3px 7px;
+  font-size: 0.95em;
+  font-weight: bold;
+  box-shadow: 0 1px 4px #2222;
+}
+
+/* CARTES & LISTES */
+.card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+  padding: 16px;
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.card img {
+  width: 100px;
+  height: 80px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-right: 14px;
+}
+
+/* BOUTONS */
+.btn, .accueil-button {
+  display: block;
+  margin: 18px auto;
+  padding: 18px 38px;
+  color: #fff;
+  background: #FF5900;
+  border: 3px solid #020305;
+  border-radius: 12px;
+  font-family: 'Jura', Arial, sans-serif;
+  font-size: 1.35em;
+  font-weight: 700;
+  text-align: center;
+  transition: box-shadow 0.15s, transform 0.15s;
+  cursor: pointer;
+}
+
+.btn:active {
+  background: #6C5B7B;
+}
+
+.accueil-button:hover {
+  background: #ff5900;
+}
+
+.add-btn {
+  border-radius: 8px;
+  font-weight: 500;
+  padding: 18px 44px;
+  font-size: 1em;
+  margin: 20px 7rem;
+}
+
+/* FAVORIS */
+.favorite {
+  color: #FFBB00;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* INPUT */
+.input, .ingredients-input {
+  border: 1px solid #ececec;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 1em;
+  margin-top: 2rem;
+  flex: 1;
+}
+
+/* PAGE INGREDIENT */
+.ingredients-section {
+  background: #FFF5ED;
+  border-radius: 18px;
+  padding: 32px 26px;
+  margin-top: 24px;
+  box-shadow: 0 4px 18px #ebe5e2;
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ingredients-form {
+  margin-bottom: 18px;
+}
+
+.ingredients-label {
+  font-family: 'Jura', Arial, sans-serif;;
+  font-weight: 600;
+  font-size: 1.18em;
+}
+
+.input-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+/* LISTE INGREDIENTS DANS FRIDGE */
+.fridge-list {
+  border-radius: 10px;
+  border: 3px solid #080808;
+  background: #fff;
+  padding: 22px 17px;
+  font-size: 1.08em;
+  margin-bottom: 36px;
+}
+
+.fridge-title {
+  font-family: 'ADLaM Display', cursive;
+  margin-bottom: 12px;
+  font-size: 22px;
+}
+
+.empty-text {
+  color: #949499;
+  font-style: italic;
+}
+
+/* UL et LI ingrédients */
+.ingredients-ul {
+  padding-left: 0;
+}
+
+.ingredient-item {
+  list-style: none;
+  margin-bottom: 7px;
+  display: flex;
+  align-items: center;
+  font-size: 10px;
+}
+
+.ingredient-text {
+  flex: 1;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  color: #CB4335;
+  font-weight: 700;
+  font-size: 1.2em;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+/* BOUTON GO */
+.go-btn {
+  margin-left: 6rem;
+  width: 50%;
+  font-weight: 900;
+  font-size: 1.4em;
+  border-radius: 12px;
+  padding: 30px 0;
+  box-shadow: 0 2px 8px #f0e3dd;
+  margin-top: 20rem;
+}
+
+/* MESSAGES */
+.no-recipes {
+  text-align: center;
+  color: #888;
+  font-size: 1.1em;
+  margin-top: 40px;
+}
+
+/* BOUTON BACK */
+.back-btn, .custom-back-btn {
+  background: #eee;
+  color: #333;
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 6px 14px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95em;
+  display: inline-flex;
+  align-items: center;
+  transition: background 0.18s;
+  margin-bottom: 20px;
+}
+
+.back-btn:hover, .custom-back-btn:hover {
+  background: #ddd;
+}
+
+.back-btn .arrow, .custom-back-btn .arrow {
+  font-size: 1.35em;
+  margin-right: 8px;
+  font-weight: bold;
+}
+
+.back-btn .back-label, .custom-back-btn .back-label {
+  font-weight: 900;
+}
+
+/* PAGE RECIPE DETAIL */
+
+.recipe-main {
+  background: #f0e1d6;
+  border-radius: 25px;
+  padding: 22px 14px 18px 14px;
+  max-width: 370px;
+  margin: 0 auto 20px auto;
+  font-family: 'Jua', Arial, sans-serif;
+}
+
+.recipe-head {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 4px;
+}
+
+.recipe-title {
+  font-family: 'Jua', Arial, sans-serif;
+  font-size: 1.25em;
+  font-weight: bold;
+  color: #292929;
+  margin: 0;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+}
+
+.recipe-img-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+  max-width: 370px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.recipe-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid #f0e1d6;
+  box-shadow: 0 2px 8px #0001;
+  flex-shrink: 0;
+}
+
+
+.recipe-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 2px;
+  font-size: 1em;
+  color: #392a25;
+  justify-content: flex-start;
+}
+
+.info-icon {
+  font-size: 1em;
+  margin-right: 7px;
+}
+
+.icon-cuisson {
+  width: 18px;
+  height: 18px;
+  margin-right: 7px;
+  vertical-align: middle;
+}
+
+.fav-btn {
+  background: none;
+  border: none;
+  color: #f47c2b;
+  font-weight: 700;
+  font-size: 1em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 8px;
+  padding: 0;
+}
+
+.fav-btn:hover .fav-icon,
+.fav-btn:focus .fav-icon {
+  color: #e95008;
+}
+
+.fav-icon {
+  font-size: 1.18em;
+}
+
+.fav-label {
+  font-size: 1em;
+  text-decoration: none;
+}
+
+/* Section bloc (ingredients/steps) */
+.section {
+  margin-bottom: 13px;
+}
+
+.section-title {
+  font-size: 1.08em;
+  font-family: 'ADLaM Display', cursive;
+  font-weight: bold;
+  margin-bottom: 7px;
+  color: #221c17;
+}
+
+.section-box {
+  background: #fff;
+  border-radius: 20px;
+  border: 2.5px solid #1d1613;
+  padding: 12px 16px;
+  min-height: 48px;
+}
+
+/* Liste ingrédients */
+.ingredient-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.07em;
+  margin-bottom: 7px;
+}
+
+.ingredient-emoji {
+  font-size: 1.2em;
+}
+
+.ingredient-amount {
+  font-size: 12px;
+  color: #292929;
+}
+
+/* Liste étapes */
+.step-row {
+  font-family: 'Jura', Arial, sans-serif;
+  margin-bottom: 11px;
+  font-size: 12px;
+  color: #392a25;
+}
+
+/****************** Page accueil ******************/
+
+.accueil-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #F5EDE9;
+  font-family: 'Jura', Arial, sans-serif;
+}
+
+.accueil-title {
+  font-family: 'ADLaM Display', cursive;
+  font-weight: 400 ;
+  font-size: 42px;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.accueil-image {
+  width: 278px;
+  height: 278px;
+  margin-bottom: 18px;
+}
+
+.accueil-subtitle {
+  text-align: center;
+  font-size: 1.12em;
+  color: #444;
+  margin-bottom: 24px;
+  max-width: 350px;
+}
+
+.accueil-subtitle strong {
+  font-weight: bold;
+}
+
+span{
+  color: #000000;
+  font-weight: bold;
+}
+
+.accueil-button {
+  /* Taille, marge et padding */
+  display: block;
+  margin: 18px auto;
+  padding: 18px 38px;
+  color: #fff;
+  background: #FF5900; 
+  border: 3px solid #020305;
+  border-radius: 12px;
+  font-family: 'Jura', Arial, sans-serif;
+  font-size: 1.35em;
+  font-weight: 700;
+  text-align: center;
+  /* Transition pour effets au clic */
+  transition: box-shadow 0.15s, transform 0.15s;
+  cursor: pointer;
+}
+
+.accueil-button:hover {
+  background: #ff5900;
+}
