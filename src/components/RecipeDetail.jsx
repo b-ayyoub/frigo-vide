@@ -4,19 +4,27 @@ import BackButton from "./BackButton";
 
 
 export default function RecipeDetail() {
+  // On récupère l'ID de la recette depuis l'URL
   const { id } = useParams();
+  // On utilise le hook useParams de react-router-dom pour obtenir l'ID de la recette
+  // On utilise le contexte pour accéder aux recettes et aux favoris
+  // On utilise le hook useFridge pour accéder aux recettes et aux favoris
   const { recipes, favorites, addFavorite, removeFavorite } = useFridge();
-
+// On cherche la recette correspondante à l'ID
   const recipe = recipes.find(r => r.id === parseInt(id, 10));
+  // Si la recette n'existe pas, on affiche un message d'erreur
   if (!recipe) return <div>Recette introuvable</div>;
+  // On vérifie si la recette est dans les favoris
+  // On utilise some pour vérifier si la recette est dans les favoris
   const isFavorite = favorites.some(r => r.id === recipe.id);
+  // On affiche les détails de la recette
 
   return (
     <>
       {/* Bouton retour en haut */}
       <BackButton label="Apple Or Peach Strudel with honney " />
       
-      {/* Bloc image + infos à droite (hors container principal) */}
+
       <div className="recipe-img-info">
         <img src={recipe.image} alt={recipe.nom} className="recipe-img" />
         <div className="recipe-info">

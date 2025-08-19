@@ -102,7 +102,7 @@ export default function IngredientForm() {
                   // On utilise aria-label pour l'accessibilité
                   aria-label={`Remove ${ing}`}
                 >
-                  ✕
+                  🗑️
                 </button>
               </li>
             ))}
